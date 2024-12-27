@@ -19151,3 +19151,87 @@ Processing by ProductsController#index as HTML
 Completed 200 OK in 90ms (Views: 81.5ms | ActiveRecord: 5.6ms | Allocations: 7782)
 
 
+Started GET "/" for ::1 at 2024-12-21 13:19:19 +0300
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (2.2ms)[0m  [1m[34mSELECT "products".* FROM "products" ORDER BY created_at desc[0m
+  ↳ app/views/products/index.html.erb:14
+  Rendered products/index.html.erb within layouts/application (Duration: 148.3ms | Allocations: 11669)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 273.0ms | Allocations: 21108)
+Completed 200 OK in 366ms (Views: 295.2ms | ActiveRecord: 4.9ms | Allocations: 29344)
+
+
+Started GET "/users/sign_in" for ::1 at 2024-12-21 13:19:22 +0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 5.5ms | Allocations: 595)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 174.1ms | Allocations: 19158)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 206.7ms | Allocations: 23789)
+Completed 200 OK in 274ms (Views: 221.5ms | ActiveRecord: 3.0ms | Allocations: 29737)
+
+
+Started GET "/users/sign_up" for ::1 at 2024-12-21 13:19:25 +0300
+Processing by RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 1.6ms | Allocations: 113)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 206.7ms | Allocations: 13191)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 270.1ms | Allocations: 17807)
+Completed 200 OK in 340ms (Views: 327.0ms | ActiveRecord: 0.0ms | Allocations: 20333)
+
+
+Started GET "/" for ::1 at 2024-12-21 13:19:32 +0300
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.9ms)[0m  [1m[34mSELECT "products".* FROM "products" ORDER BY created_at desc[0m
+  ↳ app/views/products/index.html.erb:14
+  Rendered products/index.html.erb within layouts/application (Duration: 39.6ms | Allocations: 2718)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 123.4ms | Allocations: 7879)
+Completed 200 OK in 131ms (Views: 125.2ms | ActiveRecord: 0.9ms | Allocations: 8310)
+
+
+Started GET "/" for ::1 at 2024-12-27 10:36:11 +0300
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.7ms)[0m  [1m[34mSELECT "products".* FROM "products" ORDER BY created_at desc[0m
+  ↳ app/views/products/index.html.erb:14
+  Rendered products/index.html.erb within layouts/application (Duration: 82.1ms | Allocations: 12182)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 175.0ms | Allocations: 21957)
+Completed 200 OK in 256ms (Views: 187.7ms | ActiveRecord: 2.4ms | Allocations: 28792)
+
+
+Started GET "/users/sign_in" for ::1 at 2024-12-27 10:36:21 +0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 5.4ms | Allocations: 593)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 133.9ms | Allocations: 19245)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 182.4ms | Allocations: 23828)
+Completed 200 OK in 255ms (Views: 200.3ms | ActiveRecord: 2.5ms | Allocations: 30150)
+
+
+Started GET "/users/sign_up" for ::1 at 2024-12-27 10:36:23 +0300
+Processing by RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 1.3ms | Allocations: 113)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 74.0ms | Allocations: 13184)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 100.0ms | Allocations: 17866)
+Completed 200 OK in 124ms (Views: 119.6ms | ActiveRecord: 0.0ms | Allocations: 19875)
+
+
