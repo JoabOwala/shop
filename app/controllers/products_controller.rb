@@ -57,8 +57,21 @@ class ProductsController < ApplicationController
   end
 
  # DELETE /products/1 or /products/1.json
+# DELETE /products/1 or /products/1.json
 def destroy
+  if @product.destroy
+    respond_to do |format|
+      format.html { redirect_to products_url, notice: "Product was successfully deleted." }
+      format.json { head :no_content }
+    end
+  else
+    respond_to do |format|
+      format.html { redirect_to products_url, alert: "Product could not be deleted." }
+      format.json { render json: @product.errors, status: :unprocessable_entity }
+    end
+  end
 end
+
 
   private
     # Use callbacks to share common setup or constraints between actions.
