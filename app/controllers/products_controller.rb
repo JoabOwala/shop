@@ -3,6 +3,7 @@ class ProductsController < ApplicationController
   
   before_action :authenticate_user!, except: [:index, :show]
 
+  before_action :authorize_user!, only: [:edit, :update, :destroy]
 
   # GET /products or /products.json
   def index
@@ -69,4 +70,10 @@ end
     def product_params
       params.require(:product).permit(:brand, :model, :description, :condition, :finish, :title, :price, :image)
     end
+      # Ensure only the owner of the product can modify it
+  def authorize_user!
+    unless @product.user == current_user
+      redirect_to products_path, alert: "You are not authorized to perform this action."
+    end
+  end
 end
