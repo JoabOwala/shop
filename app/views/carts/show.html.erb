@@ -1,17 +1,41 @@
-
-<h1>Your Cart</h1>
-
-<% if @cart.cart_items.any? %>
-  <ul>
-    <% @cart.cart_items.each do |item| %>
-      <li>
-        <%= item.product.title %> - <%= item.quantity %> x <%= item.product.price %>
-        <%= link_to 'Remove', cart_item_path(item), method: :delete, data: { confirm: 'Are you sure?' } %>
-      </li>
+<section class="section cart-show">
+  <div class="container">
+    <h1 class="title is-3">Your Cart</h1>
+    <% if @cart.cart_items.any? %>
+      <table class="table is-fullwidth">
+        <thead>
+          <tr>
+            <th>Product</th>
+            <th>Quantity</th>
+            <th>Price</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @cart.cart_items.each do |item| %>
+            <tr>
+              <td>
+                <%= item.product.title %>
+              </td>
+              <td>
+                <%= item.quantity %>
+              </td>
+              <td>
+                <%= number_to_currency(item.product.price * item.quantity) %>
+              </td>
+              <td>
+                <%= button_to 'Remove', cart_item_path(item), method: :delete, data: { confirm: 'Are you sure?' }, class: 'button is-danger is-small' %>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+      <div class="is-pulled-right">
+        <p class="is-size-5"><strong>Total: <%= number_to_currency(@cart.total_price) %></strong></p>
+        <%= button_to 'Empty Cart', empty_cart_path, method: :delete, data: { confirm: 'Are you sure?' }, class: 'button is-warning' %>
+      </div>
+    <% else %>
+      <p>Your cart is empty.</p>
     <% end %>
-  </ul>
-  <p>Total: <%= @cart.total_price %></p>
-  <%= button_to 'Empty Cart', empty_cart_path, method: :delete, data: { confirm: 'Are you sure?' }, class: "button is-warning is-small" %>
-<% else %>
-  <p>Your cart is empty.</p>
-<% end %>
+  </div>
+</section>
