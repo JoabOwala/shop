@@ -32,6 +32,8 @@
 
       <p class="f3 fw6 has-text-right pt2 price"><%= number_to_currency(product.price) %></p>
 
+      <%= button_to 'Add to Cart', cart_items_path(product_id: product.id), method: :post, class: "button is-primary" %>
+
  <%# This is where you will have to add the code so that only the user will be able to edit or delete
  at the moment every one can do that, find a way to fix this %>
       
