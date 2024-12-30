@@ -39,6 +39,15 @@
           <div class="navbar-item">
             <div class="field is-grouped">
 
+            <%= link_to cart_path do %>
+              🛒 <%= @current_cart.total_items %>
+            <% end %>
+
+            
+            <% flash.each do |key, value| %>
+              <div class="<%= key %>"><%= value %></div>
+            <% end %>
+    
             <% if user_signed_in? %>
               <%= link_to 'Sell', new_product_path, class: "navbar-item button is-dark" %>
 
